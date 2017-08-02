@@ -4,6 +4,15 @@
 from detector import *
 from parser import html_parser
 
-if __name__ == '__main__':
-  input_list = html_parser('watermarked.txt')
-  print(input_list)
+###### constant value ######
+BITSIZE = 32
+
+###### parse ######
+data_list = html_parser('watermarked.txt')
+print('########## data_list ##########')
+print(data_list)
+
+###### detect ######
+detected_watermark = detector(data_list, BITSIZE)
+print('########## detected_watermark ##########')
+print(detected_watermark)
