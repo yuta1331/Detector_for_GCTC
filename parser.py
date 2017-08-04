@@ -4,7 +4,7 @@
 import re
 
 def html_parser(input_file):
-  input_str = ""
+  input_str = ''
   input_list = list()
   for line in open(input_file, 'r'): # read file: html
     input_str = input_str + line
