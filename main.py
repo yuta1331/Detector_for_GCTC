@@ -10,6 +10,7 @@ BITSIZE = 32
 ###### parse ######
 data_list = html_parser('watermarked.txt')
 print('========== data_list ==========')
+# print(len(data_list))
 print(data_list)
 
 ###### detect ######

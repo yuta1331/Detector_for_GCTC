@@ -13,6 +13,7 @@ def detector(input_list, bitsize):
     extract_bits = extract_bits + extract_bit
  # extract_bits = '01110111011001010111001101110100'
   print('========== extract_bits ==========')
+  # print(len(extract_bits))
   print(extract_bits)
 
   detect_word = ''
