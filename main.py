@@ -25,3 +25,14 @@ print(extract_bits)
 
 print('========== detected_watermark ==========')
 print(detected_watermark)
+
+###### for GUI application ######
+import json
+outputDict = {
+  'data_list' : data_list,
+  'extract_bits' : extract_bits,
+  'detected_watermark' : detected_watermark
+}
+print(outputDict)
+outputFile = open('output.json', 'w')
+json.dump(outputDict, outputFile)
