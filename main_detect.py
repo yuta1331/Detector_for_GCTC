@@ -1,6 +1,13 @@
 #!usr/bin/env python
 #-*- coding: utf-8 -*-
 
+###########################################
+# for detection of watermark              #
+# 1. parse watermark.html                 #
+# 2. detect data_list                     #
+# 3. output watermark into output_wm.json #
+###########################################
+
 from detector import detector
 from parser import html_parser
 
@@ -8,7 +15,7 @@ from parser import html_parser
 BITSIZE = 32
 
 ###### parse ######
-data_list = html_parser('watermarked.txt')
+data_list = html_parser('watermarked.html')
 
 print('========== data_list ==========')
 # print(len(data_list))
@@ -34,5 +41,5 @@ outputDict = {
   'detected_watermark' : detected_watermark
 }
 print(outputDict)
-outputFile = open('output.json', 'w')
+outputFile = open('output_wm.json', 'w')
 json.dump(outputDict, outputFile)
