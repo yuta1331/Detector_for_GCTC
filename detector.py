@@ -10,17 +10,17 @@ def detector(input_list, bitsize):
   for i, input_value in enumerate(input_list):
     if (i == bitsize): break
     extract_bit = '0' if (input_value - int(input_value)) < 0.5 else '1'
-    extract_bits = extract_bits + extract_bit
- # extract_bits = '01110111011001010111001101110100'
-  print('========== extract_bits ==========')
-  print(extract_bits)
+    extract_bits = extract_bits + extract_bit  # extract_bits = '01110111011001010111001101110100'
+  # print('========== extract_bits ==========')
+  # print(len(extract_bits))
+  # print(extract_bits)
 
   detect_word = ''
   for i in range(math.ceil(bitsize / 8)): # math.ceil(bitsize / 8) : the number of detect_word
     ascii_bin = extract_bits[i*8:(i+1)*8] # ascii_bin = '01110111'
     ascii_dec = int(ascii_bin, 2) # ascii_dec = 119
     detect_word = detect_word + chr(ascii_dec) # detect_word = west
-  return detect_word
+  return [extract_bits, detect_word]
 
 if __name__ == '__main__':
   BITSIZE = 32

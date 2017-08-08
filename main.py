@@ -9,10 +9,30 @@ BITSIZE = 32
 
 ###### parse ######
 data_list = html_parser('watermarked.txt')
+
 print('========== data_list ==========')
+# print(len(data_list))
 print(data_list)
 
 ###### detect ######
-detected_watermark = detector(data_list, BITSIZE)
+returnList = detector(data_list, BITSIZE)
+extract_bits = returnList[0]
+detected_watermark = returnList[1]
+
+print('========== extract_bits ==========')
+# print(len(extract_bits))
+print(extract_bits)
+
 print('========== detected_watermark ==========')
 print(detected_watermark)
+
+###### for GUI application ######
+import json
+outputDict = {
+  'data_list' : data_list,
+  'extract_bits' : extract_bits,
+  'detected_watermark' : detected_watermark
+}
+print(outputDict)
+outputFile = open('output.json', 'w')
+json.dump(outputDict, outputFile)
