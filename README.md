@@ -1,6 +1,17 @@
 # Detector_for_GCTC
 GCTCで使うアプリ
 
+## 目的
+機能としては2つ
+### detection
+ここでの目的は2つ
+- 透かし後のデータを成形すること
+- 透かし情報を検出すること
+
+### parse prev_watermark.html
+ここでの目的は1つ
+- 透かし前のデータを成形すること
+
 ## How To Use
 ### for detection
 ```bash
