@@ -1,4 +1,8 @@
 __pycache__/
 
-output_wm.json
-output_prev.json
+*.pyc
+
+output/*
+!.gitkeep
+
+main_*
