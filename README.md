@@ -32,8 +32,8 @@ python main.py
 2. paramsをhomeID_YYYY-MM-DDの形式に成形
 
 ### http request
-1. 指定したURIにGETしてレスポンスボディをget prev_watermark.htmlとして保管
-2. 指定したURIにGETしてレスポンスボディをwatermarked.htmlとして保管
+1. 指定したURIにGETしてレスポンスボディをhtml/prev_watermark.htmlとして保管
+2. 指定したURIにGETしてレスポンスボディをhtml/watermarked.htmlとして保管
 
 ここで指定するURIはそれぞれ
 1. http://ホスト:ポート/org/家ID_YYYY-MM-DD.html
@@ -46,12 +46,12 @@ homeID_YYYY-MM-DDにはread config_jsonで成形した値を持ってくる
 2. data_listからextract_bitsを作成
 3. extract_bitsをasciiデコードすることでwatermarkを検出
 また、GUIのために、
-4. 以上の3つの変数を```output_wm.json```に格納して保存
+4. 以上の3つの変数を```output/output_wm.json```に格納して保存
 
 ### parse prev_watermark
 以上を実行すると
 1. prev_watermark.htmlをパースして電力データをdata_listに格納
-2. ```output_prev.json```に格納して保存
+2. ```output/output_prev.json```に格納して保存
 
 ただし、for detectionと同形式にしたかったため、<br>
 'extract_bits' : '00000000000000000000000000000000'<br>
