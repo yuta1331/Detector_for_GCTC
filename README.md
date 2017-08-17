@@ -4,6 +4,10 @@ GCTCで使うアプリ
 ## 目的
 機能としては3つ
 
+### read config_json
+ここでの目的は1つ
+- 予め設定されている，家IDと日付を含むjsonファイルを読みに行く
+
 ### http request
 ここでの目的は1つ
 - 透かし前と透かし後のデータをWebサーバから取ってくること
@@ -23,6 +27,10 @@ python main.py
 ```
 以上を実行すると以下が実行される
 
+### read config_json
+1. recommendation.jsonを読む
+2. paramsをhomeID_YYYY-MM-DDの形式に成形
+
 ### http request
 1. 指定したURIにGETしてレスポンスボディをget prev_watermark.htmlとして保管
 2. 指定したURIにGETしてレスポンスボディをwatermarked.htmlとして保管
@@ -31,7 +39,7 @@ python main.py
 1. http://ホスト:ポート/org/家ID_YYYY-MM-DD.html
 2. http://ホスト:ポート/mod/家ID_YYYY-MM-DD.html
 
-今回はhtml名は固定したが、実際のデモでは外から指定された値に従ってリクエストを送る
+homeID_YYYY-MM-DDにはread config_jsonで成形した値を持ってくる
 
 ### detection
 1. watemark.htmlをパースして電力データをdata_listに格納
