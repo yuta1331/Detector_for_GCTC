@@ -27,11 +27,11 @@
 import requests
 
 request_org = requests.get("http://mywebpage:8080/org/20733902_2016-11-30.html")
-with open("prev_watermark.html", "w") as f:
+with open("html/prev_watermark.html", "w") as f:
   f.write(request_org.text)
 
 request_mod = requests.get("http://mywebpage:8080/mod/20733902_2016-11-30.html")
-with open("watermarked.html", "w") as f:
+with open("html/watermarked.html", "w") as f:
   f.write(request_mod.text)
 
 
@@ -44,7 +44,7 @@ with open("watermarked.html", "w") as f:
 from parser import html_parser
 
 ###### parse ######
-data_list = html_parser('prev_watermark.html')
+data_list = html_parser('html/prev_watermark.html')
 
 print('========== data_list ==========')
 # print(len(data_list))
@@ -58,7 +58,7 @@ outputDict = {
   'detected_watermark' : '0'
 }
 print(outputDict)
-outputFile = open('output_prev.json', 'w')
+outputFile = open('output/output_prev.json', 'w')
 json.dump(outputDict, outputFile)
 
 
@@ -76,7 +76,7 @@ from parser import html_parser
 BITSIZE = 32
 
 ###### parse ######
-data_list = html_parser('watermarked.html')
+data_list = html_parser('html/watermarked.html')
 
 print('========== data_list ==========')
 # print(len(data_list))
@@ -102,5 +102,5 @@ outputDict = {
   'detected_watermark' : detected_watermark
 }
 print(outputDict)
-outputFile = open('output_wm.json', 'w')
+outputFile = open('output/output_wm.json', 'w')
 json.dump(outputDict, outputFile)

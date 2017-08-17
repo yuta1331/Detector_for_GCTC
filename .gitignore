@@ -2,7 +2,7 @@ __pycache__/
 
 *.pyc
 
-output_wm.json
-output_prev.json
+output/*
+!.gitkeep
 
 main_*
