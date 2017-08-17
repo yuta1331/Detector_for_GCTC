@@ -27,6 +27,8 @@ from parser import html_parser
 from detector import detector
 from parser import html_parser
 
+HOST_PORT = "mywebpage:8080"
+
 ##############################################
 # for reading json                           #
 #  1. read recommendation.json               #
@@ -78,11 +80,11 @@ home_date = home_dict[int(params["home_no"])] + "_" + params["year"] + "-" + par
 
 # import requests
 
-request_org = requests.get("http://mywebpage:8080/org/" + home_date + ".html")
+request_org = requests.get("http://" + HOST_PORT + "/org/" + home_date + ".html")
 with open("html/prev_watermark.html", "w") as f:
   f.write(request_org.text)
 
-request_mod = requests.get("http://mywebpage:8080/mod/" + home_date + ".html")
+request_mod = requests.get("http://" + HOST_PORT + "/mod/" + home_date + ".html")
 with open("html/watermarked.html", "w") as f:
   f.write(request_mod.text)
 
