@@ -4,6 +4,7 @@
 ##############################################
 # for reading json                           #
 #  1. read recommendation.json               #
+#  2. figuring home_date                     #
 #                                            #
 # for http request                           #
 #  1. get prev_watermark.html                #
