@@ -33,18 +33,11 @@ from detector import detector
 # HOST_PORT = "mywebpage:8080"
 HOST_PORT = ""
 
-# CONFIG_JSON = "config_jsons/recommendation.json"
-CONFIG_JSON = ""
+CONFIG_JSON = "config_jsons/recommendation.json"
 
 BITSIZE = 32 # 4 words on ASCII code
 
-try:
-  init_config_json = Read_json(CONFIG_JSON)
-except:
-  print("DEFAULT: config_json")
-  CONFIG_JSON = "config_jsons/recommendation.json"
-  init_config_json = Read_json(CONFIG_JSON)
-num = 0
+num = None # num is update_count
 
 
 while(1):
@@ -76,14 +69,14 @@ while(1):
       with open("html/prev_watermark.html", "w") as f:
         f.write(request_org.text)
     except:
-      print("DEFAULT: prev_watermark.html")
+      print("WARNING: cannot get prev_watermark.html and use the existed one")
     
     try:
       request_mod = requests.get("http://" + HOST_PORT + "/mod/" + home_date + ".html")
       with open("html/watermarked.html", "w") as f:
         f.write(request_mod.text)
     except:
-      print("DEFAULT: watermarked.html")
+      print("WARNING: cannot get watermarked.html and use the existed one")
     
     
     #############################################
