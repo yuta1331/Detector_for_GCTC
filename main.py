@@ -27,8 +27,11 @@ from parser import html_parser
 from detector import detector
 from parser import html_parser
 
-HOST_PORT = "mywebpage:8080"
-CONFIG_JSON = "config_jsons/recommendation.json"
+# HOST_PORT = "mywebpage:8080"
+HOST_PORT = ""
+
+# CONFIG_JSON = "config_jsons/recommendation.json"
+CONFIG_JSON = ""
 
 ##############################################
 # for reading json                           #
@@ -36,7 +39,11 @@ CONFIG_JSON = "config_jsons/recommendation.json"
 #  2. figuring home_date                     #
 ##############################################
 
-home_date = home_date_from_json(CONFIG_JSON)
+try:
+  home_date = home_date_from_json(CONFIG_JSON)
+except:
+  print("DEFAULT: homeID_date")
+  home_date = home_date_from_json("config_jsons/recommendation.json")
 
 ##############################################
 # for http request                           #
@@ -46,13 +53,19 @@ home_date = home_date_from_json(CONFIG_JSON)
 
 # import requests
 
-request_org = requests.get("http://" + HOST_PORT + "/org/" + home_date + ".html")
-with open("html/prev_watermark.html", "w") as f:
-  f.write(request_org.text)
+try:
+  request_org = requests.get("http://" + HOST_PORT + "/org/" + home_date + ".html")
+  with open("html/prev_watermark.html", "w") as f:
+    f.write(request_org.text)
+except:
+  print("DEFAULT: prev_watermark.html")
 
-request_mod = requests.get("http://" + HOST_PORT + "/mod/" + home_date + ".html")
-with open("html/watermarked.html", "w") as f:
-  f.write(request_mod.text)
+try:
+  request_mod = requests.get("http://" + HOST_PORT + "/mod/" + home_date + ".html")
+  with open("html/watermarked.html", "w") as f:
+    f.write(request_mod.text)
+except:
+  print("DEFAULT: watermarked.html")
 
 
 #############################################
