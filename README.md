@@ -21,6 +21,30 @@ GCTCで使うアプリ
 ここでの目的は1つ
 - 透かし前のデータを成形すること
 
+## Config
+### main.py
+#### HOST_PORT: WebサーバのIPとポートを書く
+```python
+HOST_PORT = "192.168.0.3:8080"
+```
+### launchContainer.sh
+#### CONF_DIR: recommendation.jsonのあるホストのディレクトリのパスを書く
+絶対パスでも相対パスでもいい
+```shellscript
+CONF_DIR = "config_jsons"
+```
+
+## Run
+```bash
+sh launchContainer.sh
+```
+これだけで，Dockerイメージのbuildからrun，main.pyの実行までやってくれる
+
+もし，コンテナ内のconfig_jsonsへのマウントがうまくいかない場合は，config_jsons内のjsonファイルを削除してから実行するとうまくいく
+
+---
+以下は別に読まなくてもおけ（Docker導入以前に書いた，プログラムの説明）
+
 ## How To Use
 ```bash
 python main.py
