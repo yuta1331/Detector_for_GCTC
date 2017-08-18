@@ -1,0 +1,12 @@
+{
+  "appname": "anonymizer",
+  "updatetime": "2017-07-27T08:21:37",
+  "updatecount": 0,
+  "params": {
+    "kAnonymizer": "2",
+    "kFlatter": "0",
+    "perturbator": "0",
+    "flatter": "0",
+    "watermarker": "west"
+  }
+}
