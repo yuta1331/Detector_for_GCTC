@@ -37,8 +37,12 @@ CONFIG_JSON = "config_jsons/recommendation.json"
 
 BITSIZE = 32 # 4 words on ASCII code
 
-num = None # num is update_count
+# outputJSON
+OUTPUT_PREV = 'output/before/output_prev.json'
+OUTPUT = 'output/after/output.json'
 
+
+num = None # num is update_count
 
 while(1):
   try:
@@ -102,8 +106,8 @@ while(1):
       'detected_watermark' : '0'
     }
     print(outputDict)
-    outputFile = open('output/before/output_prev.json', 'w')
-    json.dump(outputDict, outputFile)
+    with open(OUTPUT_PREV, 'w') as outputFile:
+      json.dump(outputDict, outputFile)
     
     
     ###########################################
@@ -143,5 +147,5 @@ while(1):
       'detected_watermark' : detected_watermark
     }
     print(outputDict)
-    outputFile = open('output/after/output_wm.json', 'w')
-    json.dump(outputDict, outputFile)
+    with open(OUTPUT, 'w') as outputFile:
+      json.dump(outputDict, outputFile)
