@@ -102,7 +102,7 @@ while(1):
       'detected_watermark' : '0'
     }
     print(outputDict)
-    outputFile = open('output/output_prev.json', 'w')
+    outputFile = open('output/before/output_prev.json', 'w')
     json.dump(outputDict, outputFile)
     
     
@@ -143,5 +143,5 @@ while(1):
       'detected_watermark' : detected_watermark
     }
     print(outputDict)
-    outputFile = open('output/output_wm.json', 'w')
+    outputFile = open('output/after/output_wm.json', 'w')
     json.dump(outputDict, outputFile)
