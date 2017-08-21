@@ -9,9 +9,8 @@ def detector(input_list, bitsize):
   extract_bits = ''
   for i, input_value in enumerate(input_list):
     if (i == bitsize): break
-    extract_bit = str(int(input_value * 1000) % 2) # for 偶奇 detector
+    extract_bit = str(int(input_value * 1000) % 2) # for detecting whether odd or even of .3 digit
     extract_bits = extract_bits + extract_bit  # extract_bits = '01110111011001010111001101110100'
-    print("values[" + str(i) + "] is " + str(input_value))
   '''
   # for 0.5 detector
     extract_bit = '0' if (input_value - int(input_value)) < 0.5 else '1'

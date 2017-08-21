@@ -89,6 +89,8 @@ while(1):
       #############################################
       
       # from parser import html_parser
+
+      print('########## before watermark ##########')
       
       ###### parse ######
       data_list = html_parser('html/prev_watermark.html')
@@ -104,7 +106,9 @@ while(1):
         'extract_bits' : '00000000000000000000000000000000',
         'detected_watermark' : '0'
       }
+      print('========== output_prev.json ==========')
       print(outputDict)
+      print('')
       with open(OUTPUT_PREV, 'w') as outputFile:
         json.dump(outputDict, outputFile)
       
@@ -118,6 +122,8 @@ while(1):
       
       # from detector import detector
       # from parser import html_parser
+
+      print('########## after watermark ##########')
       
       ###### parse ######
       data_list = html_parser('html/watermarked.html')
@@ -135,7 +141,7 @@ while(1):
       # print(len(extract_bits))
       print(extract_bits)
       
-      print('========== detected_watermark ==========')
+      print('========== output_wm.json ==========')
       # print(detected_watermark)
       
       ###### for GUI application ######
