@@ -9,8 +9,14 @@ def detector(input_list, bitsize):
   extract_bits = ''
   for i, input_value in enumerate(input_list):
     if (i == bitsize): break
+    extract_bit = str(int(input_value * 1000) % 2) # for 偶奇 detector
+    extract_bits = extract_bits + extract_bit  # extract_bits = '01110111011001010111001101110100'
+    print("values[" + str(i) + "] is " + str(input_value))
+  '''
+  # for 0.5 detector
     extract_bit = '0' if (input_value - int(input_value)) < 0.5 else '1'
     extract_bits = extract_bits + extract_bit  # extract_bits = '01110111011001010111001101110100'
+  '''
   # print('========== extract_bits ==========')
   # print(len(extract_bits))
   # print(extract_bits)
@@ -24,6 +30,12 @@ def detector(input_list, bitsize):
 
 if __name__ == '__main__':
   BITSIZE = 32
+  '''
+  # for 0.5 detector
   INPUT_LIST = [0.18, 0.634, 0.692, 0.636, 0.122, 0.612, 0.602, 0.61, 0.103, 0.605, 0.606, 0.097, 0.1, 0.607, 0.425, 0.953, 0.064, 0.876, 0.848, 0.772, 0.238, 0.305, 0.746, 0.743, 0.005, 0.97, 0.674, 0.662, 0.148, 0.707, 0.213, 0.16, 0.179, 0.141, 0.28, 0.194, 0.188, 0.25, 0.296, 0.531, 0.314, 0.354, 0.497, 0.226, 0.226, 0.229, 0.33, 0.356]
+  '''
+
+  # for 偶奇 detector
+  INPUT_LIST = [0.18, 0.135, 0.193, 0.137, 0.122, 0.112, 0.103, 0.11, 0.104, 0.104, 0.107, 0.098, 0.1, 0.109, 0.425, 0.454, 0.565, 0.377, 0.349, 0.273, 0.239, 0.305, 0.246, 0.243, 0.505, 0.47, 0.174, 0.163, 0.148, 0.207, 0.214, 0.162, 0.179, 0.141, 0.28, 0.194, 0.188, 0.25, 0.296, 0.531, 0.314, 0.354, 0.497, 0.226, 0.226, 0.229, 0.33, 0.356]
   result = detector(INPUT_LIST, BITSIZE)
   print(result)
