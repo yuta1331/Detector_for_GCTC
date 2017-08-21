@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 
 ##############################################
 # for reading json                           #
@@ -47,7 +48,7 @@ class Read_json:
       21: '25495058'
     }
     
-    home_date = home_dict[int(params["home_no"])] + "_" + params["year"] + "-" + params["month"] + "-" + "30" # "30" は要検討
+    home_date = home_dict[int(params["home_no"])] + "_" + params["year"] + "-" + params["month"] + "-" + "05" # "30" は要検討
     # home_date = 20733902_2016-11-30
     return home_date
 

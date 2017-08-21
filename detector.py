@@ -16,7 +16,7 @@ def detector(input_list, bitsize):
   # print(extract_bits)
 
   detect_word = ''
-  for i in range(math.ceil(bitsize / 8)): # math.ceil(bitsize / 8) : the number of detect_word
+  for i in range(int(math.ceil(bitsize / 8))): # math.ceil(bitsize / 8) : the number of detect_word
     ascii_bin = extract_bits[i*8:(i+1)*8] # ascii_bin = '01110111'
     ascii_dec = int(ascii_bin, 2) # ascii_dec = 119
     detect_word = detect_word + chr(ascii_dec) # detect_word = west
